@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/config.dart';
+import 'package:frontend/screens/sign_up_screen.dart';
+import 'package:get/get.dart';
 
-void main() {
+void main() async {
+  await initConfigurations();
+
   runApp(const MyApp());
 }
 
@@ -10,19 +15,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Banana Bank',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellowAccent),
         useMaterial3: true,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.yellow,
-          title: const Text('Banana Bank'),
-        ),
-      ),
+      home: SignUpScreen(),
     );
   }
 }
