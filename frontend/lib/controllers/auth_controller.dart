@@ -7,7 +7,8 @@ class AuthController extends GetxController {
   final email = TextEditingController();
   final password = TextEditingController();
   final cep = TextEditingController();
-  final formKey = GlobalKey<FormState>();
+  final formKeySignup = GlobalKey<FormState>();
+  final formKeySignin = GlobalKey<FormState>();
 
   resetState() {
     name.clear();
@@ -19,6 +20,11 @@ class AuthController extends GetxController {
   register() async {
     await AuthService.to
         .createUser(name.text, password.text, email.text, cep.text);
+    resetState();
+  }
+
+  login() async {
+    await AuthService.to.login(email.text, password.text);
     resetState();
   }
 }

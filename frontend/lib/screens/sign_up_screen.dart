@@ -13,6 +13,7 @@ class SignUpScreen extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(80.0),
         child: AppBar(
+          foregroundColor: Colors.white,
           flexibleSpace: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
@@ -39,7 +40,7 @@ class SignUpScreen extends StatelessWidget {
               ),
             ),
             Form(
-              key: controller.formKey,
+              key: controller.formKeySignup,
               child: Column(
                 children: [
                   Padding(
@@ -132,7 +133,7 @@ class SignUpScreen extends StatelessWidget {
                         minimumSize: const Size(250, 50.0),
                       ),
                       onPressed: () {
-                        if (controller.formKey.currentState!.validate()) {
+                        if (controller.formKeySignup.currentState!.validate()) {
                           controller.register();
                         }
                       },

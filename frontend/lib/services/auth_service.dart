@@ -37,4 +37,31 @@ class AuthService extends GetxController {
       );
     }
   }
+
+  login(
+    String email,
+    String password,
+  ) async {
+    try {
+      // var http = Dio();
+
+      // TODO - LOGIN
+
+      Get.snackbar(
+        'Sucesso',
+        'Usuário criado com sucesso!',
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Colors.yellow,
+        colorText: Colors.black,
+      );
+    } catch (e) {
+      Get.snackbar(
+        'Erro ao registrar!',
+        e.toString(),
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Get.theme.snackBarTheme.backgroundColor,
+        colorText: Get.theme.snackBarTheme.actionTextColor,
+      );
+    }
+  }
 }
