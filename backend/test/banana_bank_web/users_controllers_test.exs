@@ -7,10 +7,10 @@ defmodule BananaBankWeb.UsersControllersTest do
   describe "create/2" do
     test "successfully creates an user", %{conn: conn} do
       params = %{
-        name: "Victor",
-        cep: "12345678",
-        email: "victor@gmail.com",
-        password: "123456"
+        "name" => "Victor",
+        "cep" => "12345678",
+        "email" => "victor@gmail.com",
+        "password" => "123456"
       }
 
       response =
@@ -44,10 +44,10 @@ defmodule BananaBankWeb.UsersControllersTest do
   describe "delete/2" do
     test "successfully deletes an user", %{conn: conn} do
       params = %{
-        name: "Victor",
-        cep: "12345678",
-        email: "victor@gmail.com",
-        password: "123456"
+        "name" => "Victor",
+        "cep" => "12345678",
+        "email" => "victor@gmail.com",
+        "password" => "123456"
       }
 
       {:ok, %User{id: id}} = Users.create(params)
