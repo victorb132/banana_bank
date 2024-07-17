@@ -30,7 +30,7 @@ defmodule BananaBank.ViaCep.ClientTest do
       "localidade" => "São Paulo", "logradouro" => "Praça Almirante Pena Botto",
       "siafi" => "7107", "uf" => "SP", "unidade" => ""}}
 
-      Bypass.expect(bypass, fn "GET", "/04816100/json" ->
+      Bypass.expect(bypass, "GET", "/04816100/json", fn conn ->
         conn
         |> Plug.Conn.put_resp_content_type("application/json")
         |> Plug.Conn.resp(200, body)
