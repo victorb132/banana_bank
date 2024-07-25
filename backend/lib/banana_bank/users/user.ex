@@ -2,6 +2,9 @@ defmodule BananaBank.Users.User do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias BananaBank.Accounts.Account
+  alias Ecto.Changeset
+
   @required_params_create [:name, :password, :email, :cep]
   @required_params_update [:name, :email, :cep]
 
@@ -13,6 +16,7 @@ defmodule BananaBank.Users.User do
     field :password_hash, :string
     field :email, :string
     field :cep, :string
+    has_one :account, Account
 
     timestamps()
   end
